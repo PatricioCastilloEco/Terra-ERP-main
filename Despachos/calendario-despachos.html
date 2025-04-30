@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra ERP - Despachos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="../css/fade.css">
+
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <h3>Terra ERP</h3>
+        </div>
+        <sidebar-component></sidebar-component>
+    </div> 
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <h3>Terra ERP</h3>
+        </div>
+        <sidebar-component></sidebar-component>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <h1 class="display-4 fade-in">Calendario de Despachos</h1>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-section fade-in">
+                <h5>Filtros</h5>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Fecha</label>
+                        <select class="form-select" name="temporada" id="temporada">
+                            <option value="24-25" selected>24-25</option>
+                            <option value="23-24">23-24</option>
+                            <option value="22-23">22-23</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Cuartel</label>
+                        <input type="text" class="form-control" id="busqueda" placeholder="Buscar...">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Variedad</label>
+                        <select class="form-select" name="variedad" id="variedad">
+                            <option value="">Todas</option>
+                            <option value="red-globe">Red Globe</option>
+                            <option value="crimson">Crimson Seedless</option>
+                            <option value="thompson">Thompson Seedless</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Opciones de tiempo -->
+            <div class="time-options fade-in">
+                <div class="time-option" data-view="month">MES</div>
+                <div class="time-option active" data-view="week">SEMANA</div>
+                <div class="time-option" data-view="day">DÍA</div>
+                <div class="time-option" data-view="agenda">AGENDA</div>
+            </div>
+
+            <!-- Vista de Mes -->
+            <div class="month-view calendar-container fade-in">
+                <div class="calendar-header">
+                    <div class="calendar-title">marzo de 2025</div>
+                    <div class="calendar-nav">
+                        <button class="btn btn-sm btn-outline-secondary prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-sm btn-outline-secondary today">Hoy</button>
+                        <button class="btn btn-sm btn-outline-secondary next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid fade-in">
+                    <!-- Encabezados de días -->
+                    <div class="calendar-day-header">lun</div>
+                    <div class="calendar-day-header">mar</div>
+                    <div class="calendar-day-header">mié</div>
+                    <div class="calendar-day-header">jue</div>
+                    <div class="calendar-day-header">vie</div>
+                    <div class="calendar-day-header">sáb</div>
+                    <div class="calendar-day-header">dom</div>
+
+                    <!-- Días del mes (generados dinámicamente) -->
+                    <div id="month-days"></div>
+                </div>
+            </div>
+
+            <!-- Vista de Semana -->
+            <div class="week-view calendar-container">
+                <div class="calendar-header">
+                    <div class="calendar-title">Semana 11 - 17 marzo 2025</div>
+                    <div class="calendar-nav">
+                        <button class="btn btn-sm btn-outline-secondary prev-week"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-sm btn-outline-secondary today">Hoy</button>
+                        <button class="btn btn-sm btn-outline-secondary next-week"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid">
+                    <!-- Encabezados de días -->
+                    <div class="calendar-day-header">lun<br>11</div>
+                    <div class="calendar-day-header">mar<br>12</div>
+                    <div class="calendar-day-header">mié<br>13</div>
+                    <div class="calendar-day-header">jue<br>14</div>
+                    <div class="calendar-day-header">vie<br>15</div>
+                    <div class="calendar-day-header">sáb<br>16</div>
+                    <div class="calendar-day-header">dom<br>17</div>
+
+                    <!-- Contenido de la semana -->
+                    <div class="calendar-day">
+                        <div class="calendar-event">Despacho #1234 - 850kg Red Globe</div>
+                        <div class="calendar-event">Despacho #1235 - 1200kg Crimson</div>
+                    </div>
+                    <div class="calendar-day">
+                        <div class="calendar-event">Despacho #1236 - 750kg Thompson</div>
+                    </div>
+                    <div class="calendar-day today">
+                        <div class="calendar-event">Despacho #1237 - 920kg Red Globe</div>
+                        <div class="calendar-event">Despacho #1238 - 680kg Crimson</div>
+                        <div class="calendar-event">Despacho #1239 - 540kg Thompson</div>
+                    </div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                </div>
+            </div>
+
+            <!-- Vista de Día -->
+            <div class="day-view calendar-container fade-in">
+                <div class="calendar-header">
+                    <div class="calendar-title">miércoles, 13 de marzo de 2025</div>
+                    <div class="calendar-nav">
+                        <button class="btn btn-sm btn-outline-secondary prev-day"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-sm btn-outline-secondary today">Hoy</button>
+                        <button class="btn btn-sm btn-outline-secondary next-day"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="hourly-view">
+                    <div class="hour-row">
+                        <div class="hour-label">08:00</div>
+                        <div class="hour-content">
+                            <div class="calendar-event">
+                                <strong>Despacho #1237</strong><br>
+                                Red Globe - 920kg<br>
+                                Cliente: Exportadora Frutícola
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hour-row">
+                        <div class="hour-label">10:30</div>
+                        <div class="hour-content">
+                            <div class="calendar-event">
+                                <strong>Despacho #1238</strong><br>
+                                Crimson - 680kg<br>
+                                Cliente: Agroexportadora Del Valle
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hour-row">
+                        <div class="hour-label">14:00</div>
+                        <div class="hour-content">
+                            <div class="calendar-event">
+                                <strong>Despacho #1239</strong><br>
+                                Thompson - 540kg<br>
+                                Cliente: Frutas del Sur
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista de Agenda -->
+            <div class="agenda-view calendar-container">
+                <div class="calendar-header">
+                    <div class="calendar-title">Agenda - marzo 2025</div>
+                    <div class="calendar-nav">
+                        <button class="btn btn-sm btn-outline-secondary prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-sm btn-outline-secondary today">Hoy</button>
+                        <button class="btn btn-sm btn-outline-secondary next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="agenda-list">
+                    <div class="agenda-item">
+                        <div class="agenda-date">miércoles, 13 de marzo</div>
+                        <div class="agenda-event">
+                            <strong>08:00 - Despacho #1237</strong>: Red Globe - 920kg - Exportadora Frutícola
+                        </div>
+                        <div class="agenda-event">
+                            <strong>10:30 - Despacho #1238</strong>: Crimson - 680kg - Agroexportadora Del Valle
+                        </div>
+                        <div class="agenda-event">
+                            <strong>14:00 - Despacho #1239</strong>: Thompson - 540kg - Frutas del Sur
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="agenda-date">lunes, 11 de marzo</div>
+                        <div class="agenda-event">
+                            <strong>09:00 - Despacho #1234</strong>: Red Globe - 850kg - Exportadora Frutícola
+                        </div>
+                        <div class="agenda-event">
+                            <strong>11:45 - Despacho #1235</strong>: Crimson - 1200kg - Agroexportadora Del Valle
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+    <script>
+        // Datos de ejemplo para despachos
+        const eventos = [
+            { id: 1234, fecha: '2025-03-11', hora: '09:00', variedad: 'Red Globe', cantidad: 850, cliente: 'Exportadora Frutícola' },
+            { id: 1235, fecha: '2025-03-11', hora: '11:45', variedad: 'Crimson', cantidad: 1200, cliente: 'Agroexportadora Del Valle' },
+            { id: 1236, fecha: '2025-03-12', hora: '10:00', variedad: 'Thompson', cantidad: 750, cliente: 'Frutas del Sur' },
+            { id: 1237, fecha: '2025-03-13', hora: '08:00', variedad: 'Red Globe', cantidad: 920, cliente: 'Exportadora Frutícola' },
+            { id: 1238, fecha: '2025-03-13', hora: '10:30', variedad: 'Crimson', cantidad: 680, cliente: 'Agroexportadora Del Valle' },
+            { id: 1239, fecha: '2025-03-13', hora: '14:00', variedad: 'Thompson', cantidad: 540, cliente: 'Frutas del Sur' }
+        ];
+
+        // Variables de estado
+        let currentView = 'week';
+        let currentDate = new Date(2025, 2, 13); // 13 de marzo 2025
+        let showInKilos = true;
+
+        // Inicializar el calendario
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCalendar();
+            setupEventListeners();
+        });
+
+        // Configurar event listeners
+        function setupEventListeners() {
+            // Opciones de visualización (kilos/cajas)
+            document.querySelectorAll('.view-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.view-option').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    showInKilos = this.dataset.view === 'kilos';
+                    updateCalendar();
+                });
+            });
+
+            // Opciones de vista (mes/semana/día/agenda)
+            document.querySelectorAll('.time-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.time-option').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    currentView = this.dataset.view;
+                    updateCalendar();
+                });
+            });
+
+            // Navegación
+            document.querySelectorAll('.prev-month, .prev-week, .prev-day').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (currentView === 'month') currentDate.setMonth(currentDate.getMonth() - 1);
+                    if (currentView === 'week') currentDate.setDate(currentDate.getDate() - 7);
+                    if (currentView === 'day') currentDate.setDate(currentDate.getDate() - 1);
+                    updateCalendar();
+                });
+            });
+
+            document.querySelectorAll('.next-month, .next-week, .next-day').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (currentView === 'month') currentDate.setMonth(currentDate.getMonth() + 1);
+                    if (currentView === 'week') currentDate.setDate(currentDate.getDate() + 7);
+                    if (currentView === 'day') currentDate.setDate(currentDate.getDate() + 1);
+                    updateCalendar();
+                });
+            });
+
+            document.querySelectorAll('.today').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentDate = new Date();
+                    updateCalendar();
+                });
+            });
+        }
+
+        // Actualizar el calendario según la vista seleccionada
+        function updateCalendar() {
+            // Ocultar todas las vistas
+            document.querySelectorAll('.month-view, .week-view, .day-view, .agenda-view').forEach(view => {
+                view.style.display = 'none';
+            });
+
+            // Mostrar la vista actual
+            document.querySelector(`.${currentView}-view`).style.display = 'block';
+
+            // Actualizar contenido según la vista
+            if (currentView === 'month') {
+                updateMonthView();
+            } else if (currentView === 'week') {
+                updateWeekView();
+            } else if (currentView === 'day') {
+                updateDayView();
+            } else if (currentView === 'agenda') {
+                updateAgendaView();
+            }
+        }
+
+        // Actualizar vista de mes
+        function updateMonthView() {
+            const monthTitle = currentDate.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+            document.querySelector('.month-view .calendar-title').textContent = monthTitle;
+
+            // Generar días del mes (simplificado)
+            // En una implementación real, esto generaría los días dinámicamente
+        }
+
+        // Actualizar vista de semana
+        function updateWeekView() {
+            const startOfWeek = new Date(currentDate);
+            startOfWeek.setDate(currentDate.getDate() - currentDate.getDay() + 1); // Lunes
+
+            const endOfWeek = new Date(startOfWeek);
+            endOfWeek.setDate(startOfWeek.getDate() + 6); // Domingo
+
+            const options = { day: 'numeric', month: 'long' };
+            const weekTitle = `Semana ${startOfWeek.getDate()} - ${endOfWeek.getDate()} ${endOfWeek.toLocaleDateString('es-ES', { month: 'long' })} ${endOfWeek.getFullYear()}`;
+            document.querySelector('.week-view .calendar-title').textContent = weekTitle;
+
+            // Actualizar días en los encabezados
+            const dayHeaders = document.querySelectorAll('.week-view .calendar-day-header');
+            const tempDate = new Date(startOfWeek);
+
+            dayHeaders.forEach((header, index) => {
+                const dayName = tempDate.toLocaleDateString('es-ES', { weekday: 'short' });
+                const dayNumber = tempDate.getDate();
+                header.innerHTML = `${dayName}<br>${dayNumber}`;
+                tempDate.setDate(tempDate.getDate() + 1);
+            });
+
+            // Actualizar eventos
+            const weekDays = document.querySelectorAll('.week-view .calendar-day');
+            weekDays.forEach(day => {
+                day.innerHTML = ''; // Limpiar eventos anteriores
+                day.classList.remove('today');
+            });
+
+            // Marcar día actual
+            const todayIndex = (currentDate.getDay() + 6) % 7; // Ajustar para que lunes=0
+            weekDays[todayIndex].classList.add('today');
+
+            // Mostrar eventos (simplificado)
+            eventos.forEach(evento => {
+                const eventDate = new Date(evento.fecha);
+                if (eventDate >= startOfWeek && eventDate <= endOfWeek) {
+                    const dayIndex = (eventDate.getDay() + 6) % 7; // Ajustar para que lunes=0
+                    const cantidad = showInKilos ? `${evento.cantidad}kg` : `${Math.round(evento.cantidad/5)} cajas`;
+                    const eventElement = document.createElement('div');
+                    eventElement.className = 'calendar-event';
+                    eventElement.textContent = `Despacho #${evento.id} - ${cantidad} ${evento.variedad}`;
+                    weekDays[dayIndex].appendChild(eventElement);
+                }
+            });
+        }
+
+        // Actualizar vista de día
+        function updateDayView() {
+            const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+            const dayTitle = currentDate.toLocaleDateString('es-ES', options);
+            document.querySelector('.day-view .calendar-title').textContent = dayTitle;
+
+            // Mostrar eventos del día
+            const dayEvents = eventos.filter(evento => {
+                const eventDate = new Date(evento.fecha);
+                return eventDate.toDateString() === currentDate.toDateString();
+            });
+
+            const hourlyView = document.querySelector('.day-view .hourly-view');
+            hourlyView.innerHTML = '';
+
+            dayEvents.forEach(evento => {
+                const eventRow = document.createElement('div');
+                eventRow.className = 'hour-row';
+                eventRow.innerHTML = `
+                    <div class="hour-label">${evento.hora}</div>
+                    <div class="hour-content">
+                        <div class="calendar-event">
+                            <strong>Despacho #${evento.id}</strong><br>
+                            ${evento.variedad} - ${showInKilos ? `${evento.cantidad}kg` : `${Math.round(evento.cantidad/5)} cajas`}<br>
+                            Cliente: ${evento.cliente}
+                        </div>
+                    </div>
+                `;
+                hourlyView.appendChild(eventRow);
+            });
+        }
+
+        // Actualizar vista de agenda
+        function updateAgendaView() {
+            const monthTitle = currentDate.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+            document.querySelector('.agenda-view .calendar-title').textContent = `Agenda - ${monthTitle}`;
+
+            // Agrupar eventos por día
+            const eventsByDay = {};
+            eventos.forEach(evento => {
+                const eventDate = new Date(evento.fecha);
+                if (eventDate.getMonth() === currentDate.getMonth() && eventDate.getFullYear() === currentDate.getFullYear()) {
+                    const dateKey = eventDate.toISOString().split('T')[0];
+                    if (!eventsByDay[dateKey]) {
+                        eventsByDay[dateKey] = [];
+                    }
+                    eventsByDay[dateKey].push(evento);
+                }
+            });
+
+            // Ordenar días
+            const sortedDays = Object.keys(eventsByDay).sort().reverse();
+
+            // Mostrar eventos
+            const agendaList = document.querySelector('.agenda-view .agenda-list');
+            agendaList.innerHTML = '';
+
+            sortedDays.forEach(day => {
+                const dayDate = new Date(day);
+                const options = { weekday: 'long', day: 'numeric', month: 'long' };
+                const dayTitle = dayDate.toLocaleDateString('es-ES', options);
+
+                const dayElement = document.createElement('div');
+                dayElement.className = 'agenda-item';
+                dayElement.innerHTML = `<div class="agenda-date">${dayTitle}</div>`;
+
+                eventsByDay[day].forEach(evento => {
+                    const cantidad = showInKilos ? `${evento.cantidad}kg` : `${Math.round(evento.cantidad/5)} cajas`;
+                    const eventElement = document.createElement('div');
+                    eventElement.className = 'agenda-event';
+                    eventElement.innerHTML = `<strong>${evento.hora} - Despacho #${evento.id}</strong>: ${evento.variedad} - ${cantidad} - ${evento.cliente}`;
+                    dayElement.appendChild(eventElement);
+                });
+
+                agendaList.appendChild(dayElement);
+            });
+        }
+    </script>
+</body>
+</html>

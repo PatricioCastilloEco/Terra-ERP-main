@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/app.css" />
+    <link rel="stylesheet" href="~/css/fade.css" />
+    <title>Servicios API</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Contenedor de tarjetas en fila -->
+        <div class="cards-row">
+            <!-- Primera tarjeta con los botones de servicio -->
+            <div class="card fade-in">
+                <h1>Backend de la Aplicación Terra</h1>
+                <p>Seleccione un servicio para probar:</p>
+                <div class="button-grid">
+                    <a href="/api/calibres" class="btn">Calibres</a>
+                    <a href="/api/cierrescomercialesbody" class="btn">Cierres Comerciales (Body)</a>
+                    <a href="/api/cierrescomercialeshead" class="btn">Cierres Comerciales (Head)</a>
+                    <a href="/api/clientes" class="btn">Clientes</a>
+                    <a href="/api/cuarteles" class="btn">Cuarteles</a>
+                    <a href="/api/cultivos" class="btn">Cultivos</a>
+                    <a href="/api/despachos_body" class="btn">Despachos (Body)</a>
+                    <a href="/api/despachos_head" class="btn">Despachos (Head)</a>
+                    <a href="/api/estados_plantacion" class="btn">Estados de Plantación</a>
+                    <a href="/api/plantacion" class="btn">Plantación</a>
+                    <a href="/api/procesopackinghead" class="btn">Proceso Packing (Head)</a>
+                    <a href="/api/recepciones" class="btn">Recepciones</a>
+                    <a href="/api/temporadas" class="btn">Temporadas</a>
+                    <a href="/api/unidades" class="btn">Unidades</a>
+                    <a href="/api/variedad" class="btn">Variedad</a>
+                </div>
+            </div>
+
+            <!-- Segunda tarjeta solo para el botón de prueba de conexión -->
+            <div class="card fade-in connection-card">
+                <h2>Probar Conexión a la Base de Datos</h2>
+                <a href="/api/database/test" class="btn btn-test-connection">Probar Conexión</a>
+            </div>
+
+            <!-- Tercera tarjeta con una imagen -->
+            <div class="card fade-in image-card">
+                <h2>Imagen de ejemplo</h2>
+                <img src="https://via.placeholder.com/300x200" alt="Imagen de ejemplo" class="image-card-img">
+            </div>
+
+            <!-- Nueva tarjeta para variedades con manzanas y kiwis -->
+            <div class="card fade-in">
+                <h2>Comprobar Variedades</h2>
+                <div class="button-grid">
+                    <a href="/api/variedades/manzanas" class="btn">Manzanas</a>
+                    <a href="/api/variedades/kiwis" class="btn">Kiwis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

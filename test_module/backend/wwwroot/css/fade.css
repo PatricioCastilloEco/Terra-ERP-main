@@ -1,0 +1,17 @@
+﻿/* Animación de fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(20px); /* Desplazamiento hacia abajo */
+    }
+
+    100% {
+        opacity: 1; /* Se vuelve completamente visible */
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+}
+
+/* Aplica la animación al elemento que desees */
+.fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
