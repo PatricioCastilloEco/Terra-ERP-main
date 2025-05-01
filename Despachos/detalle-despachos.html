@@ -116,10 +116,12 @@
                                 <option value="granny">2002</option>
                             </select>
                         </div>
+
+                        <!--SELECT --->
                         
                         <div class="col-md-3">
                             <label class="form-label">&nbsp;</label>
-                            <button class="btn btn-primary w-100">Filtrar</button>
+                            <button id="btnFiltrar" class="btn btn-primary w-100">Filtrar</button>
                         </div>
                     </div>
                 </div>
@@ -129,7 +131,7 @@
             <div class="card fade-in">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table id="tabla-despacho" class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -146,77 +148,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Exportadora Frutícola S.A.</td>
-                                    <td>2024-03-15</td>
-                                    <td>Red Globe</td>
-                                    <td>C-12</td>
-                                    <td>G-24567</td>
-                                    <td>25</td>
-                                    <td>850</td>
-                                    <td>830</td>
-                                    <td><span class="badge bg-info">En Tránsito</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info" onclick="verDespacho(1)">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-warning" onclick="editarDespacho(1)">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-danger" onclick="eliminarDespacho(1)">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Agroexportadora Del Valle</td>
-                                    <td>2024-03-16</td>
-                                    <td>Crimson Seedless</td>
-                                    <td>C-08</td>
-                                    <td>G-24568</td>
-                                    <td>30</td>
-                                    <td>1020</td>
-                                    <td>830</td> <!-- Aquí pones KG Recepcionados reales -->
 
-                                    <td><span class="badge bg-success">Entregado</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info" onclick="verDespacho(2)">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-warning" onclick="editarDespacho(2)">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-danger" onclick="eliminarDespacho(2)">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Frutas del Sur</td>
-                                    <td>2024-03-17</td>
-                                    <td>Thompson Seedless</td>
-                                    <td>C-15</td>
-                                    <td>G-24569</td>
-                                    <td>18</td>
-                                    <td>612</td>
-                                    <td>830</td> <!-- Aquí pones KG Recepcionados reales -->
-
-                                    <td><span class="badge bg-warning">Pendiente</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info" onclick="verDespacho(3)">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-warning" onclick="editarDespacho(3)">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-danger" onclick="eliminarDespacho(3)">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -322,26 +254,21 @@
 
     <script src="../js/API/manageSelect.js"></script>
     <script src="../js/API/manageVariedades.js"></script>
+    <script src="../js/API/despachoTable.js"></script>
 
-    <script>
-        function verDespacho(id) {
-            // Implementar lógica de visualización
-            console.log('Ver despacho:', id);
-        }
-
-        function editarDespacho(id) {
-            // Implementar lógica de edición
-            console.log('Editar despacho:', id);
-        }
-
-        function eliminarDespacho(id) {
-            if (confirm('¿Está seguro de eliminar este despacho?')) {
-                // Implementar lógica de eliminación
-                console.log('Eliminar despacho:', id);
-            }
-        }
-    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
