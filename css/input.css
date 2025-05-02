@@ -1,0 +1,27 @@
+
+input[type="number"] {
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    border: 2px solid #ccc; /* Borde sutil */
+    border-radius: 12px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo suave */
+    color: #333; /* Color del texto */
+    width: 80%; /* Para que ocupe el ancho completo de la celda */
+    height: 30px;
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+    transition: all 0.3s ease; /* Transición suave en interacciones */
+}
+
+    /* Efecto al poner el cursor sobre el input */
+    input[type="number"]:focus {
+        border-color: #000793; 
+        box-shadow: 0 0 1px rgba(19, 4, 5, 0); 
+        background-color: #fff; /* Cambio de fondo a blanco */
+        outline: none; /* Eliminar contorno por defecto */
+    }
+
+    /* Efecto al poner el cursor dentro del input */
+    input[type="number"]:hover {
+        border-color: #888; /* Color del borde en hover */
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }

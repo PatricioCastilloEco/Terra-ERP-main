@@ -1,0 +1,85 @@
+/* Estilo de la tabla */
+    #tabla-despacho {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #tabla-despacho th, #tabla-despacho td {
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    #tabla-despacho th {
+        background-color: #f3f3f3;
+        color: #333;
+        font-weight: 600;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    #tabla-despacho tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+    #tabla-despacho tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    #tabla-despacho tr:hover {
+        background-color: #e2e8f0;
+    }
+
+    /* Estilo de celdas */
+    #tabla-despacho td {
+        color: #555;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Estilo para las celdas con botones */
+    #tabla-despacho td button {
+        color: #333;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+
+
+    /* Estilo de celdas con badges */
+    .badge {
+        border-radius: 12px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .badge.bg-warning {
+        background-color: #ffeb3b;
+        color: #333;
+    }
+
+    .badge.bg-info {
+        background-color: #03a9f4;
+        color: #fff;
+    }
+
+    .badge.bg-success {
+        background-color: #4caf50;
+        color: #fff;
+    }
+
+    /* Ajuste de la tabla para pantallas pequeñas */
+    @media (max-width: 768px) {
+        #tabla-despacho {
+            font-size: 12px;
+        }
+
+        #tabla-despacho th, #tabla-despacho td {
+            padding: 10px 12px;
+        }
+    }

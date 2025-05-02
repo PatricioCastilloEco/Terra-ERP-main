@@ -8,6 +8,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/fade.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/input.css">
 
 </head>
 <body>
@@ -99,7 +101,10 @@
 
                         <div class="col-md-3">
                             <label class="form-label">Variedad</label>
-                            <select class="form-select" id="select-variedades">Seleccione Variedad</select> <!-- Para variedades como Manzanas -->
+                            <select class="form-select" id="select-variedades">
+                                <option disabled selected>Seleccione una variedad</option>
+                            </select>
+                           
                         </div>
 
                         <div class="col-md-3">
@@ -129,8 +134,8 @@
 
             <!-- Tabla de Despachos -->
             <div class="card fade-in">
-                <div class="card-body">
-                    <div class="table-responsive">
+                <div class="card-body fade-in">
+                    <div class="table-responsive fade-in">
                         <table id="tabla-despacho" class="table table-hover">
                             <thead>
                                 <tr>
@@ -148,7 +153,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                    <!-- Se carga con JS desde js/despachoTable.js--->
                             </tbody>
                         </table>
                     </div>
