@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+// Api que muestra los clientes 
 [Route("api/clientes")]
 [ApiController]
 public class ClientesController : ControllerBase

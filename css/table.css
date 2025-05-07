@@ -1,85 +1,95 @@
-/* Estilo de la tabla */
+/* Estilo general de la tabla */
+#tabla-despacho {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezado */
+#tabla-despacho th {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    font-weight: 700;
+    text-align: left;
+    padding: 16px;
+    font-size: 15px;
+    border-bottom: 2px solid #d1d5db;
+}
+
+/* Filas de datos */
+#tabla-despacho td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+/* Zebra stripes */
+#tabla-despacho tr:nth-child(even) td {
+    background-color: #f9fafb;
+}
+
+/* Hover effect */
+#tabla-despacho tr:hover td {
+    background-color: #f1f5f9;
+}
+
+/* Botones en celdas */
+#tabla-despacho td button {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#tabla-despacho td button:hover {
+    background-color: #2563eb;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    border-radius: 9999px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.badge.bg-warning {
+    background-color: #facc15;
+    color: #1f2937;
+}
+
+.badge.bg-info {
+    background-color: #0ea5e9;
+    color: #fff;
+}
+
+.badge.bg-success {
+    background-color: #10b981;
+    color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
     #tabla-despacho {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-size: 13px;
     }
 
-    #tabla-despacho th, #tabla-despacho td {
-        padding: 12px 15px;
-        text-align: left;
-        font-size: 14px;
-    }
-
-    #tabla-despacho th {
-        background-color: #f3f3f3;
-        color: #333;
-        font-weight: 600;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    #tabla-despacho tr:nth-child(even) {
-        background-color: #f7f7f7;
-    }
-
-    #tabla-despacho tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-
-    #tabla-despacho tr:hover {
-        background-color: #e2e8f0;
-    }
-
-    /* Estilo de celdas */
+    #tabla-despacho th,
     #tabla-despacho td {
-        color: #555;
-        font-family: 'Arial', sans-serif;
+        padding: 12px;
     }
-
-    /* Estilo para las celdas con botones */
-    #tabla-despacho td button {
-        color: #333;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-
-
-    /* Estilo de celdas con badges */
-    .badge {
-        border-radius: 12px;
-        padding: 5px 10px;
-        font-size: 12px;
-    }
-
-    .badge.bg-warning {
-        background-color: #ffeb3b;
-        color: #333;
-    }
-
-    .badge.bg-info {
-        background-color: #03a9f4;
-        color: #fff;
-    }
-
-    .badge.bg-success {
-        background-color: #4caf50;
-        color: #fff;
-    }
-
-    /* Ajuste de la tabla para pantallas pequeñas */
-    @media (max-width: 768px) {
-        #tabla-despacho {
-            font-size: 12px;
-        }
-
-        #tabla-despacho th, #tabla-despacho td {
-            padding: 10px 12px;
-        }
-    }
+}

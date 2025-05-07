@@ -1,52 +1,81 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<div class="logo-container">
+    <img src="../img/logo.png" alt="Terra ERP Logo" class="logo fade-in" style="height: 90px;">
+</div>
+
 <nav class="nav flex-column">
     <a class="nav-link active" href="dashboard.html">
         <i class="fas fa-home"></i> Dashboard
     </a>
-    <a class="nav-link" href="faenas.html">
+    <a class="nav-link" href="../razonSocial.html">
+        <i class="bi bi-building"></i> Razones Sociales
+
+    </a>
+
+    <!-- Recepciones con submenu -->
+    <a class="nav-link" data-bs-toggle="collapse" href="#submenuRecepciones" role="button" aria-expanded="false" aria-controls="submenuRecepciones">
+        <i class="fas fa-box-open"></i> Recepciones
+        <i class="fas fa-chevron-down float-end"></i>
+    </a>
+    <div class="collapse ms-3" id="submenuRecepciones">
+        <a class="nav-link" href="/Recepciones/resumen-recepciones.html">
+            <i class="fas fa-calendar-day"></i> Resumen
+        </a>
+        <a class="nav-link" href="/Recepciones/detalle-recepciones.html">
+            <i class="fas fa-calendar-check"></i> Detalle
+        </a>
+    </div>
+
+
+        <!-- Despachos con submenu -->
+        <a class="nav-link" data-bs-toggle="collapse" href="#submenuDespachos" role="button" aria-expanded="false" aria-controls="submenuDespachos">
+            <i class="fas fa-shipping-fast"></i> Despachos
+            <i class="fas fa-chevron-down float-end"></i>
+        </a>
+        <div class="collapse ms-3" id="submenuDespachos">
+            <a class="nav-link" href="/Despachos/resumen-despachos.html">
+                <i class="fas fa-calendar-day"></i> Resumen
+            </a>
+            <a class="nav-link" href="/Despachos/detalle-despachos.html">
+                <i class="fas fa-calendar-check"></i> Detalle
+            </a>
+            <a class="nav-link" href="/Despachos/calendario-despachos.html">
+                <i class="fas fa-history"></i> Calendario
+            </a>
+        </div>
+    
+
+    <a class="nav-link" href="../faenas.html">
         <i class="fas fa-truck"></i> Faenas
     </a>
-    <a class="nav-link" href="produccion.html">
+    <a class="nav-link" href="../produccion.html">
         <i class="fas fa-industry"></i> Producción
     </a>
-    <a class="nav-link" href="inventario.html">
+    <a class="nav-link" href="../inventario.html">
         <i class="fas fa-boxes"></i> Inventario
     </a>
-    <a class="nav-link" href="facturacion.html">
+    <a class="nav-link" href="../facturacion.html">
         <i class="fas fa-file-invoice-dollar"></i> Facturación
     </a>
-    <a class="nav-link" href="costos.html">
+    <a class="nav-link" href="../costos.html">
         <i class="fas fa-money-bill-wave"></i> Costos
     </a>
-    <a class="nav-link" href="resultados.html">
+    <a class="nav-link" href="../resultados.html">
         <i class="fas fa-chart-line"></i> Resultados
     </a>
-    <a class="nav-link" href="personas.html">
+    <a class="nav-link" href="../personas.html">
         <i class="fas fa-users"></i> Personas
     </a>
 
-    <!-- Despachos con submenu -->
-    <a class="nav-link" data-bs-toggle="collapse" href="#submenuDespachos" role="button" aria-expanded="false" aria-controls="submenuDespachos">
-        <i class="fas fa-shipping-fast"></i> Despachos
-        <i class="fas fa-chevron-down float-end"></i>
-    </a>
-    <div class="collapse ms-3" id="submenuDespachos">
-        <a class="nav-link" href="/Despachos/resumen-despachos.html">
-            <i class="fas fa-calendar-day"></i> Resumen
-        </a>
-        <a class="nav-link" href="/Despachos/detalle-despachos.html">
-            <i class="fas fa-calendar-check"></i> Detalle
-        </a>
-        <a class="nav-link" href="/Despachos/calendario-despachos.html">
-            <i class="fas fa-history"></i> Calendario
-        </a>
-    </div>
-    
 
-    <a class="nav-link" href="plantaciones.html">
-        <i class="fas fa-tractor"></i> Plantaciones
+
+
+    <a class="nav-link" href="../plantaciones.html">
+        <i class="fas fa-seedling"></i> Plantaciones
     </a>
+    
     <a class="nav-link" href="#" onclick="logout()">
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
     </a>
 </nav>
-

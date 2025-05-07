@@ -1,85 +1,113 @@
-    // Gráfico de Barras 1
-    var ctx1 = document.getElementById('barChart1').getContext('2d');
-    var barChart1 = new Chart(ctx1, {
+window.addEventListener('DOMContentLoaded', () => {
+  // Gráfico de Barras 1
+  new Chart(document.getElementById('barChart1'), {
       type: 'bar',
       data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
-        datasets: [{
-          label: 'Ventas',
-          data: [12, 19, 3, 5, 2],
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
-        }]
+          labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+          datasets: [{
+              label: 'Ventas',
+              data: [12, 19, 3, 5, 2],
+              backgroundColor: '#2E3B87', // Azul oscuro
+              borderRadius: 6
+          }]
       },
       options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
+          responsive: true,
+          plugins: {
+              legend: { display: false },
+              tooltip: {
+                  callbacks: {
+                      label: ctx => `Ventas: ${ctx.formattedValue}`
+                  }
+              }
+          },
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  ticks: {
+                      stepSize: 5
+                  }
+              }
           }
-        }
       }
-    });
+  });
 
-    // Gráfico de Barras 2
-    var ctx2 = document.getElementById('barChart2').getContext('2d');
-    var barChart2 = new Chart(ctx2, {
+  // Gráfico de Barras 2
+  new Chart(document.getElementById('barChart2'), {
       type: 'bar',
       data: {
-        labels: ['Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre'],
-        datasets: [{
-          label: 'Ventas',
-          data: [22, 13, 7, 9, 15],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
-        }]
+          labels: ['Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre'],
+          datasets: [{
+              label: 'Ventas',
+              data: [22, 13, 7, 9, 15],
+              backgroundColor: '#3DCCEC', // Celeste
+              borderRadius: 6
+          }]
       },
       options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
+          responsive: true,
+          plugins: {
+              legend: { display: false },
+              tooltip: {
+                  callbacks: {
+                      label: ctx => `Ventas: ${ctx.formattedValue}`
+                  }
+              }
+          },
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  ticks: {
+                      stepSize: 5
+                  }
+              }
           }
-        }
       }
-    });
+  });
 
-    // Gráfico de Torta 1
-    var ctx3 = document.getElementById('pieChart1').getContext('2d');
-    var pieChart1 = new Chart(ctx3, {
+  // Gráfico de Torta 1
+  new Chart(document.getElementById('pieChart1'), {
       type: 'pie',
       data: {
-        labels: ['Rojo', 'Azul', 'Amarillo'],
-        datasets: [{
-          label: 'Colores',
-          data: [10, 20, 30],
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 159, 64, 1)'],
-          borderWidth: 1
-        }]
+          labels: ['SKEENA', 'KORDIA', 'REGINA', 'LAPINS'],
+          datasets: [{
+              data: [10, 20, 30, 40],
+              backgroundColor: ['#2E3B87', '#88D135', '#3DCCEC', '#A4D65E']
+          }]
       },
       options: {
-        responsive: true
+          responsive: true,
+          plugins: {
+              legend: { position: 'bottom' },
+              tooltip: {
+                  callbacks: {
+                      label: ctx => `${ctx.label}: ${ctx.formattedValue}`
+                  }
+              }
+          }
       }
-    });
+  });
 
-    // Gráfico de Torta 2
-    var ctx4 = document.getElementById('pieChart2').getContext('2d');
-    var pieChart2 = new Chart(ctx4, {
+  // Gráfico de Torta 2
+  new Chart(document.getElementById('pieChart2'), {
       type: 'pie',
       data: {
-        labels: ['Verde', 'Naranja', 'Azul'],
-        datasets: [{
-          label: 'Colores',
-          data: [15, 25, 35],
-          backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(153, 102, 255, 0.2)'],
-          borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)', 'rgba(153, 102, 255, 1)'],
-          borderWidth: 1
-        }]
+          labels: ['Verde', 'Naranja', 'Azul'],
+          datasets: [{
+              data: [15, 25, 35],
+              backgroundColor: ['#88D135', '#FF9F40', '#2E3B87']
+          }]
       },
       options: {
-        responsive: true
+          responsive: true,
+          plugins: {
+              legend: { position: 'bottom' },
+              tooltip: {
+                  callbacks: {
+                      label: ctx => `${ctx.label}: ${ctx.formattedValue}`
+                  }
+              }
+          }
       }
-    });
+  });
+});

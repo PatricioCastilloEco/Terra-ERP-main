@@ -1,3 +1,5 @@
+// Este código muestra los Cultivos y sus variedades en los SELECT ! de manera coherente
+
 async function cargarCultivos() {
     try {
         const response = await fetch('http://localhost:5080/api/cultivos');
@@ -8,12 +10,23 @@ async function cargarCultivos() {
 
         const datos = await response.json();
         const selectCultivos = document.getElementById('select-cultivos');
-        selectCultivos.innerHTML = `<option disabled selected>Seleccione un cultivo</option>`;
+        selectCultivos.innerHTML = `<option disabled selected value="">Seleccione un cultivo</option>`;
+
+        const iconosCultivos = {
+            'MANZANAS': '🍎',
+            'KIWIS': '🥝',
+            'CEREZOS': '🍒',
+            'NUECES': '🌰',
+            'ALFALFAS': '🌿'
+        };
 
         datos.forEach(item => {
+            const nombre = item.nombrecultivos;
+            const icono = iconosCultivos[nombre.toUpperCase()] || '🌱';
+
             const option = document.createElement('option');
-            option.value = item.nombrecultivos;
-            option.textContent = item.nombrecultivos;
+            option.value = nombre;
+            option.textContent = `${icono} ${nombre}`;
             selectCultivos.appendChild(option);
         });
 
@@ -26,9 +39,6 @@ async function cargarVariedades(nombreCultivo) {
     try {
         console.log(`Cargando variedades para el cultivo: ${nombreCultivo}`);
 
-        // ⚠️ Si tu endpoint real es con query param, usa esta línea en vez de la de abajo:
-        // const response = await fetch(`http://localhost:5080/api/variedades?cultivo=${encodeURIComponent(nombreCultivo)}`);
-
         const response = await fetch(`http://localhost:5080/api/variedades/${encodeURIComponent(nombreCultivo)}`);
 
         if (!response.ok) {
@@ -39,10 +49,14 @@ async function cargarVariedades(nombreCultivo) {
         const selectVariedades = document.getElementById('select-variedades');
         selectVariedades.innerHTML = `<option disabled selected>Seleccione una variedad</option>`;
 
+        const iconoGenerico = '🌾'; // Icono único para todas las variedades
+
         datos.forEach(item => {
+            const nombreVariedad = item.Nombre;
+
             const option = document.createElement('option');
-            option.value = item.Nombre;
-            option.textContent = item.Nombre;
+            option.value = nombreVariedad;
+            option.textContent = `${iconoGenerico} ${nombreVariedad}`;
             selectVariedades.appendChild(option);
         });
 

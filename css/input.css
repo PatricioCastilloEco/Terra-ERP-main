@@ -14,7 +14,7 @@ input[type="number"] {
 
     /* Efecto al poner el cursor sobre el input */
     input[type="number"]:focus {
-        border-color: #000793; 
+        border-color: #989898; 
         box-shadow: 0 0 1px rgba(19, 4, 5, 0); 
         background-color: #fff; /* Cambio de fondo a blanco */
         outline: none; /* Eliminar contorno por defecto */

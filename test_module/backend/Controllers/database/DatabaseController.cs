@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 
+// Testea la aplicación en la vista
 namespace YourNamespace.Controllers
 {
     [Route("api/database")]
