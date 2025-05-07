@@ -67,6 +67,7 @@
 
         .btn-login:hover {
             background: #15294d;
+            color:white;
             transform: translateY(-2px);
         }
 
@@ -83,8 +84,10 @@
 </head>
 <body>
     <div class="login-container">
-        <h2 class="login-title">Terra ERP</h2>
-        <form id="loginForm">
+        <div class="logo-container">
+            <img src="../img/logo.png" alt="Terra ERP Logo" class="logo fade-in" style="height: 100px; width:170px;">
+        </div>
+     <form id="loginForm">
             <div class="form-floating">
                 <input type="text" class="form-control" id="username" placeholder="Usuario" required>
                 <label for="username">Usuario</label>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/fade.css">
     <link rel="stylesheet" href="../css/table.css">
     <link rel="stylesheet" href="../css/input.css">
-
+    <link rel="stylesheet" href="../css/select.css">
 </head>
 <body>
     <!-- Sidebar -->
@@ -82,7 +82,7 @@
                         <!-- Clientes Select -->
                         <div class="col-md-3">
                             <label class="form-label">Clientes</label>
-                            <select class="form-select" id="select-clientes">
+                            <select class="form-select custom-select" id="select-clientes">
                                 <option disabled selected>Seleccione un cliente</option>
                             </select>
                             
@@ -91,7 +91,7 @@
 
                         <div class="col-md-3">
                             <label class="form-label">Temporada</label>
-                            <select class="form-select" id="select-cultivos">
+                            <select class="form-select custom-select" id="select-cultivos">
                                 <option disabled selected>Seleccione Temporada</option>
                             </select>
                         </div>
@@ -99,21 +99,21 @@
 
                         <div class="col-md-3">
                             <label class="form-label">Variedad</label>
-                            <select class="form-select" id="select-variedades">
+                            <select class="form-select custom-select" id="select-variedades">
                                 <option disabled selected>Seleccione una variedad</option>
                             </select>
                         </div>
 
                         <div class="col-md-3">
                             <label class="form-label">Cuartel</label>
-                            <select class="form-select" id="select-cuarteles">
+                            <select class="form-select custom-select" id="select-cuarteles">
                                 <option disabled selected>Seleccione un cuartel</option>
                             </select>
                         </div>
 
                         <div class="col-md-3">
                             <label class="form-label">Guia</label>
-                            <select class="form-select" id="select-guia">
+                            <select class="form-select custom-select" id="select-guia">
                                 <option disabled selected>Seleccione un guia</option>
                             </select>
                         </div>
@@ -252,6 +252,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auth.js"></script>
     <script src="../js/sidebar.js"></script>
+    <script src="../js/preloader.js"></script>
 
     <script src="../js/API/manageSelect.js"></script>
     <script src="../js/API/manageVariedades.js"></script>

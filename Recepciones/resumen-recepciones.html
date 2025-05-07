@@ -193,10 +193,10 @@
 
 
             <!-- Tabla de Despachos (oculta por defecto) -->
-            <div class="card fade-in d-none" id="detalle-despacho">
+            <div class="card fade-in d-none" id="resumen-recepciones">
                 <div class="card-body fade-in">
                     <div class="table-responsive fade-in">
-                        <table id="tabla-despacho" class="table table-hover">
+                        <table id="tabla-recepciones" class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -207,13 +207,12 @@
                                     <th>Guía</th>
                                     <th>BINS</th>
                                     <th>KG Según guía</th>
-                                    <th>KG Recepcionados</th>
-                                    <th>Estado</th>
+                                    <th>KG Recepcionados(*3)</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Se carga con JS desde js/despachoTable.js -->
+                                <!-- Se carga con JS desde js/resumenRecepcionesTable.js -->
                             </tbody>
                         </table>
                         <p id="sin-datos" class="text-center text-muted d-none">No hay datos disponibles.</p>
@@ -231,8 +230,8 @@
     <script src="../js/graphicsRecepciones.js"></script>
     <script src="../js/API/manageSelect.js"></script>
     <script src="../js/API/manageVariedades.js"></script>
-    <script src="../js/API/despachoTable.js"></script>
-
+    <script src="../js/API/resumenRecepcionesTable.js"></script>
+    <script src="../js/preloader.js"></script>
 
 <script>
         document.getElementById('btnVerDetalle').addEventListener('click', function () {
