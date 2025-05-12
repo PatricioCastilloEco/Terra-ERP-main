@@ -217,7 +217,7 @@
 
 
     <!-- Modal de Despacho -->
-    <div class="modal fade" id="despachoModal" tabindex="-1">
+    <div class="modal" id="despachoModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -308,62 +308,10 @@
     </div>
 
 
+            <!-- Graficos -->
+            <div id="graficaContainer"></div>
 
 
-    <div class="container mt-4" id="info-graphs">
-        <!-- Fila superior: Barras -->
-        <div class="row mb-4">
-          <div class="col-md-6">
-            <div class="card fade-in">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <i class="bi bi-rulers" style="color: #2E3B87; font-size: 1.4rem;"></i>
-                  <span class="ms-2">Calibre</span>
-                </h5>
-                <canvas id="barChart1"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card fade-in">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <i class="bi bi-droplet-half" style="color: #88D135; font-size: 1.4rem;"></i>
-                  <span class="ms-2">Variedad</span>
-                </h5>
-                <canvas id="barChart2"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Fila inferior: Tortas -->
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card fade-in">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <i class="bi bi-house-door" style="color: #3DCCEC; font-size: 1.4rem;"></i>
-                  <span class="ms-2">Nave</span>
-                </h5>
-                <canvas id="pieChart1" style="max-width: 100%; height: auto;"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card fade-in">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <i class="bi bi-person-badge" style="color: #A4D65E; font-size: 1.4rem;"></i>
-                  <span class="ms-2">Productor</span>
-                </h5>
-                <canvas id="pieChart2" style="max-width: 100%; height: auto;"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
       
 
                     </div>
@@ -378,11 +326,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/auth.js"></script>
     <script src="../js/sidebar.js"></script>
-    <script src="../js/graphics.js"></script>
     <script src="../js/API/manageSelect.js"></script>
     <script src="../js/API/manageVariedades.js"></script>
     <script src="../js/API/despachoTable.js"></script>
     <script src="../js/preloader.js"></script>
+    <script src="../js/graficos/graficos.js"></script>
 
     <script>
         function verDespacho(id) {
